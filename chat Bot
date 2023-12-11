@@ -1,0 +1,47 @@
+import re
+
+def health_management_chatbot(user_input):
+    # Convert user input to lowercase for case-insensitivity
+    user_input = user_input.lower()
+
+    # Simple pattern matching for common health-related queries
+    if re.search(r"\b(hi|hello|hey)\b", user_input):
+        return "Hello! I'm your health management chatbot. How can I assist you today?"
+
+    elif re.search(r"\b(how are you|how's it going)\b", user_input):
+        return "I'm just a computer program, but thanks for asking! How can I help you with your health?"
+
+    elif re.search(r"\b(weight loss|lose weight)\b", user_input):
+        return "For weight loss tips, consider a balanced diet and regular exercise. Consult with a healthcare professional for personalized advice."
+
+    elif re.search(r"\b(healthy diet|nutrition)\b", user_input):
+        return "A healthy diet includes a variety of fruits, vegetables, lean proteins, and whole grains. Drink plenty of water and limit processed foods."
+
+    elif re.search(r"\b(exercise|workout)\b", user_input):
+        return "Regular exercise is essential for overall health. Aim for a mix of cardio, strength training, and flexibility exercises."
+
+    elif re.search(r"\b(stress relief|manage stress)\b", user_input):
+        return "To manage stress, try relaxation techniques such as deep breathing, meditation, or engaging in activities you enjoy."
+
+    elif re.search(r"\b(healthy habits|lifestyle)\b", user_input):
+        return "Maintain a healthy lifestyle by getting enough sleep, staying hydrated, and avoiding excessive alcohol and tobacco use."
+
+    elif re.search(r"\b(sleep)\b", user_input):
+        return "Quality sleep is crucial for good health. Aim for 7-9 hours of sleep per night."
+
+    elif re.search(r"\b(exit|bye)\b", user_input):
+        return "Goodbye! Take care of your health, and feel free to return if you have more questions."
+
+    else:
+        return "I'm sorry, I didn't understand that. Can you please provide more details about your health-related query?"
+
+# Interaction loop
+while True:
+    user_input = input("You: ")
+    
+    if user_input.lower() == 'exit':
+        print("Health Management Chatbot: Goodbye! Take care of your health.")
+        break
+
+    response = health_management_chatbot(user_input)
+    print("Health Management Chatbot:", response
